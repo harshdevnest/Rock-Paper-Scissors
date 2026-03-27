@@ -1,36 +1,42 @@
-body{
+body {
     text-align: center;
     display: flex;
     justify-content: center;
-    background: linear-gradient(to right, #df73ce, #77cbf5); /* Left to right */
-
-
+    align-items: center; /* center vertically */
+    min-height: 100vh; /* full screen height */
+    margin: 0;
+    background: linear-gradient(to right, #df73ce, #77cbf5);
 }
-h1{
+
+h1 {
     font-size: 30px;
 }
 
-.container{
+/* Container */
+.container {
     background: linear-gradient(to right, #e2fc8b, #40f3ea);
-    width: 800px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    width: 90%;              /* responsive width */
+    max-width: 800px;        /* limit for large screens */
+    margin: 20px;
     border: 5px solid black;
-    padding: 10px;
+    padding: 15px;
     border-radius: 10px;
 }
+
+/* Buttons */
 .game-btn {
-    width: 150px;
-    height: 150px;
-    margin: 30px;
+    width: 120px;
+    height: 120px;
+    margin: 15px;
     border: none;
     border-radius: 10px;
     background-size: cover;
     background-position: center;
     cursor: pointer;
     font-size: 0;
- }
+}
 
+/* Images */
 #rock {
     background-image: url('r.png');
 }
@@ -41,4 +47,37 @@ h1{
 
 #scissor {
     background-image: url('s.jpg');
+}
+
+/* 📱 Mobile (small screens) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    .game-btn {
+        width: 90px;
+        height: 90px;
+        margin: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+/* 📱 Tablet */
+@media (min-width: 601px) and (max-width: 900px) {
+    .game-btn {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* 💻 Large screens */
+@media (min-width: 1200px) {
+    .game-btn {
+        width: 150px;
+        height: 150px;
+    }
 }
